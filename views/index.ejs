@@ -1,16 +1,92 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Full Motion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<head>
+  <title>DongHwa</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <style>
+    h2 {
+      font-size: 52pt;
+      font-weight: 200;
+    }
+    h2.d {
+
+      font-family: 'Pacifico', cursive;
+
+    }
+  </style>
+</head>
+<body id="top">
+
+<!-- Banner -->
+<!--
+    To use a video as your background, set data-video to the name of your video without
+    its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+    formats to work correctly.
+-->
+<section id="banner" data-video="images/banner">
+  <div class="inner">
+        <header>
+      <!--<h1>Team. DongHwa</h1>-->
+          <h2 class="d">Team. DongHwa</h2>
+      <p>문학을 사랑하는 독자<br />
+        이들의 생각을 필요로 하는 작가 간 open W2C (Writer to Customer) 플랫폼</p>
+    </header>
+    <a href="#main" class="more">Learn More</a>
     <a href="write">글쓰기</a><br>
-    <% if (board !== null){
+  </div>
+</section>
+
+<!-- Main -->
+<div id="main">
+  <div class="inner">
+
+    <!-- Boxes -->
+    <div class="thumbnails">
+      <% if (board !== null) {
         for(var i = 0; i < board.length; i++) { %>
-            <a href="/board/<%= board[i]._id%>"><h3><%= i+1 %> - <%=board[i].title%></h3></a>
-    <%  }} %>
-  </body>
+        <div class="box">
+          <div class="inner">
+           <h3><%=board[i].title%> <hr><%=board[i].contents2%></h3>
+            <a href="/board/<%= board[i]._id%>" class="button fit" data-poptrox="youtube,800x400">상세보기</a>
+          </div>
+        </div>
+      <%  }} %>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+  <div class="inner">
+    <h2>DongHwa Chain</h2>
+
+    <ul class="icons">
+      <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+      <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+      <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+    </ul>
+    <p class="copyright">&copy; Copyright: <a href="https://templated.co">DongHwa</a>.</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
 </html>

@@ -1,28 +1,240 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-      <h1>제목 : <%=board.title%> </h1>
-      <h3>작성자 : <%=board.author%> </h3>
-      <h3>내용 : <%=board.contents%> </h3>
-    <hr>
+<head>
+  <title>DongHwa</title>
+  <!--<style>-->
+    <!--table {-->
+      <!--width: 500px;-->
+      <!--table-layout: fixed;-->
+    <!--}-->
+    <!--td {-->
+      <!--padding: 10px;-->
+      <!--border: 1px solid #666666;-->
+    <!--}-->
+  <!--</style>-->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="2/assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="2/assets/css/noscript.css" /></noscript>
+  <% var strList = [ "작가를 향한 한마디", "따끔한 일침", "사랑을 담은 한마디", "싸늘한 한마디" ,"뼈때리는 한마디", "당신의 팬이 한마디" ]; %>
+</head>
+<body class="index is-preload">
+<div id="page-wrapper">
+
+  <!-- Header -->
+  <header id="header" class="alt">
+    <h1 id="logo"><a href="index.html">DongHwa <span>by Team. DongHwa</span></a></h1>
+    <nav id="nav">
+      <ul>
+        <li class="current"></li>
+        <li class="submenu">
+
+          <ul>
+            <li><a href="left-sidebar.html">Left Sidebar</a></li>
+            <li><a href="right-sidebar.html">Right Sidebar</a></li>
+            <li><a href="no-sidebar.html">No Sidebar</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="submenu">
+              <a href="#">Submenu</a>
+              <ul>
+                <li><a href="#">Dolore Sed</a></li>
+                <li><a href="#">Consequat</a></li>
+                <li><a href="#">Lorem Magna</a></li>
+                <li><a href="#">Sed Magna</a></li>
+                <li><a href="#">Ipsum Nisl</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section id="banner">
+
+    <!--
+        ".inner" is set up as an inline-block so it automatically expands
+        in both directions to fit whatever's inside it. This means it won't
+        automatically wrap lines, so be sure to use line breaks where
+        appropriate (<br />).
+    -->
+    <div class="inner">
+
+      <header>
+        <h2><%=board.title%></h2>
+      </header>
+      <!--<p>This is <strong>Twenty</strong>, a free-->
+        <!--<br />-->
+        <!--responsive template-->
+        <!--<br />-->
+        <!--by <a href="http://html5up.net">HTML5 UP</a>.</p>-->
+      <br/>
+      <table>
+        <tr>
+          <td width="100px"><%=board.contents2%></td>
+        </tr>
+      </table>
+      <footer>
+        <ul class="buttons stacked">
+          <li><a href="#main" class="button fit scrolly">Tell Me More</a></li>
+        </ul>
+      </footer>
+
+    </div>
+
+  </section>
+
+  <!-- Main -->
+  <article id="main">
+
+    <header class="special container">
+
+      <h2><strong>연결고리</strong>
+        <br /></h2>
+      <p>제 2의 해리포터를 만나봐</p>
+    </header>
+
+    <!-- One -->
+    <section class="wrapper style2 container special-alt">
+      <div class="row gtr-50">
+        <div class="col-16 col-12-narrower">
+          <header>
+            <h2><%=board.title%></h2>
+          </header>
+
+          <p>작가 : <%=board.author%><br/>
+          조회수 : <%=board.total%><br/>
+          날짜 : <%=board.board_date%><br/>
+          평점  : 4.3 / 5.0<br/>
+          </p>
+
+          <p><%=board.contents%></p>
+          <footer>
+            <ul class="buttons">
+              <li><a href="#" class="button">Find Out More</a></li>
+            </ul>
+          </footer>
+
+        </div>
+      </div>
+    </section>
+
     <% if (board.comments !== null) {
-        var comment = board.comments;
-          for(var i = 0; i < board.comments.length; i++) {%>
-    <h4>작성자 : <%=comment[i].author%></h4>
-    <h4>내용 : <%=comment[i].contents%></h4>
-    <hr>
-    <%}}%>
-    <form action="/comment/write" method="post">
-      <input type="text" name="id" value="<%=board._id%>" hidden>
-      댓글 : <textarea name="contents"></textarea><br>
-      글쓴이 : <input type="text" name="author"><br>
-      <input type="submit" value="확인">
-    </form>
-  </body>
+    for(var i = 0; i < board.comments.length; i++) { %>
+    <!-- Three -->
+    <section class="wrapper style3 container special">
+      <div class="row">
+        <div class="col-12">
+        <!--<div class="col-12 col-12-narrower">-->
+          <section>
+            <header>
+              <!--<h2>작가를 향한 한마디</h2>-->
+              <% var result = Math.floor(Math.random() * 6)%>
+              <h2><%=strList[result] %></h2>
+              <h3>평점 : <%=board.comments[i].star %>
+              (
+                <% var s = board.comments[i].star %>
+
+                <% for (var j = 0; j < parseInt(s); j++) { %>
+                ★
+                <%}%>
+                <% for (var j = 0; j < 5-parseInt(s); j++) { %>
+                  ☆
+                <%}%>
+                )
+              </h3>
+            </header><br/>
+            <%=board.comments[i].contents %>
+            <p/>
+            <p/>
+            <h3>좋아요 수 : <%=board.comments[i].good %>&nbsp;&nbsp;&nbsp;&nbsp;싫어요 수 : <%=board.comments[i].bad %></h3>
+          </section>
+
+        </div>
+      </div>
+
+    </section>
+    <% } } %>
+    <!-- 이 위는 댓글목록 아래는 댓글 작성-->
+
+
+    <section class="wrapper style3 container special">
+      <header class="major">
+        <h2><strong>작가를 향한 한마디</strong></h2>
+      </header>
+
+      <div class="content">
+        <form action="/comment/write" method="post">
+          <div class="row gtr-50">
+            <input type="hidden" name="id" value="<%=board._id%>" >
+            <div class="col-12">
+              <input type="text" name="star" placeholder="별점" />
+            </div>
+            <div class="col-12">
+              <textarea name="contents" placeholder="내용" rows="11"></textarea>
+            </div>
+            <div class="col-12">
+              <ul class="buttons">
+                <li><input type="submit" class="special" value="작성하기" /></li>
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </article>
+
+  <!-- CTA -->
+  <section id="cta">
+
+    <header>
+      <h2>Ready to do <strong>something</strong>?</h2>
+      <p>Proin a ullamcorper elit, et sagittis turpis integer ut fermentum.</p>
+    </header>
+    <footer>
+      <ul class="buttons">
+        <!--<li><a href="#" class="button primary">Take My Money</a></li>-->
+        <!--<li><a href="#" class="button">LOL Wut</a></li>-->
+      </ul>
+    </footer>
+
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+
+    <ul class="icons">
+      <li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+      <li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
+      <li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
+      <li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+    </ul>
+
+    <ul class="copyright">
+      <li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+
+  </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="2/assets/js/jquery.min.js"></script>
+<script src="2/assets/js/jquery.dropotron.min.js"></script>
+<script src="2/assets/js/jquery.scrolly.min.js"></script>
+<script src="2/assets/js/jquery.scrollex.min.js"></script>
+<script src="2/assets/js/browser.min.js"></script>
+<script src="2/assets/js/breakpoints.min.js"></script>
+<script src="2/assets/js/util.js"></script>
+<script src="2/assets/js/main.js"></script>
+
+</body>
 </html>

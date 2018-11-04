@@ -1,17 +1,137 @@
 <!DOCTYPE html>
+<!--<html>-->
+  <!--<head>-->
+    <!--<title>DongHwa</title>-->
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+  <!--</head>-->
+  <!--<body>-->
+    <!--<h1><%= title %></h1>-->
+    <!--<form action="/board/write" method="post">-->
+      <!--제목 : <input type="text" name="title"><br><br>-->
+      <!--내용 : <textarea name="contents"></textarea><br><br>-->
+      <!--요약 : <textarea name="contents2"></textarea><br><br>-->
+      <!--글쓴이 : <input type="text" name="author"><br><br>-->
+      <!--<input type="submit" value="확인">-->
+    <!--</form>-->
+  <!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE HTML>
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <form action="/board/write" method="post">
-      제목 : <input type="text" name="title"><br>
-      내용 : <textarea name="contents"></textarea><br>
-      글쓴이 : <input type="text" name="author"><br>
-      <input type="submit" value="확인">
-    </form>
-  </body>
+<head>
+  <title>DongHwa</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="2/assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="2/assets/css/noscript.css" /></noscript>
+</head>
+<body class="contact is-preload">
+<div id="page-wrapper">
+
+  <!-- Header -->
+  <header id="header">
+    <h1 id="logo"><a href="">DongHwa<span>by Team. DongHwa</span></a></h1>
+    <nav id="nav">
+      <ul>
+        <li class="current"><a href="index.html">Welcome</a></li>
+        <li class="submenu">
+
+          <ul>
+            <li><a href="left-sidebar.html">Left Sidebar</a></li>
+            <li><a href="right-sidebar.html">Right Sidebar</a></li>
+            <li><a href="no-sidebar.html">No Sidebar</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="submenu">
+              <a href="#">Submenu</a>
+              <ul>
+                <li><a href="#">Dolore Sed</a></li>
+                <li><a href="#">Consequat</a></li>
+                <li><a href="#">Lorem Magna</a></li>
+                <li><a href="#">Sed Magna</a></li>
+                <li><a href="#">Ipsum Nisl</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <article id="main">
+
+    <header class="special container">
+      <!--<span class="icon fa-envelope"></span>-->
+      <h2>연결고리</h2>
+      <p>솔직하고 자세한 독자의 이야기를 들어보세요.</p>
+    </header>
+
+    <!-- One -->
+    <section class="wrapper style4 special container medium">
+
+      <!-- Content -->
+      <div class="content">
+        <form action="/board/write" method="post">
+          <div class="row gtr-50">
+            <div class="col-6 col-12-mobile">
+              <input type="text" name="title" placeholder="제목" />
+            </div>
+            <div class="col-6 col-12-mobile">
+              <input type="text" name="author" placeholder="글쓴이" />
+            </div>
+            <div class="col-12">
+              <input type="text" name="contents2" placeholder="요약" />
+            </div>
+            <div class="col-12">
+              <textarea name="contents" placeholder="내용" rows="11"></textarea>
+            </div>
+            <div class="col-12">
+              <ul class="buttons">
+                <li><input type="submit" class="special" value="작성하기" /></li>
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </section>
+
+  </article>
+
+  <!-- Footer -->
+  <footer id="footer">
+
+    <ul class="icons">
+      <li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+      <li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
+      <li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
+      <li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+    </ul>
+
+    <ul class="copyright">
+      <li>&copy; DongHwa</li><li></li>
+    </ul>
+
+  </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="2/assets/js/jquery.min.js"></script>
+<script src="2/assets/js/jquery.dropotron.min.js"></script>
+<script src="2/assets/js/jquery.scrolly.min.js"></script>
+<script src="2/assets/js/jquery.scrollgress.min.js"></script>
+<script src="2/assets/js/jquery.scrollex.min.js"></script>
+<script src="2/assets/js/browser.min.js"></script>
+<script src="2/assets/js/breakpoints.min.js"></script>
+<script src="2/assets/js/util.js"></script>
+<script src="2/assets/js/main.js"></script>
+
+</body>
 </html>
